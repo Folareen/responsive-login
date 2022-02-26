@@ -1,0 +1,159 @@
+body{
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* section */
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+/* img */
+.img{
+    width: 50%;
+    height: 100vh;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+}
+
+/* form */
+.form{
+    width: 50%;
+    overflow: hidden;
+    padding: 10%;
+    box-sizing: border-box;
+}
+
+/* heading */
+.form h1{
+    font-weight: bolder;
+    border-bottom: 5px solid rgb(230, 86, 110);
+    max-width: max-content;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 0;
+}
+
+/* username and password */
+input[type="text"], input[type="password"]{
+    height: 35px;
+    border-radius: 25px ;
+    width: 100%;
+    outline: none;
+    border: 1.8px solid rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+    font-weight: bolder;
+    font-size: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+label[for="username"], label[for="password"]{
+    margin-bottom: 5px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+/* remember me */
+.remember{
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* sign in */
+input[type="submit"]{
+    height: 45px;
+    border-radius: 25px ;
+    width: 100%;
+    outline: none;
+    border: none;
+    /* border: 1.8px solid rgb(230, 86, 110); */
+    margin-bottom: 15px;
+    background-color:  rgb(230, 86, 110) ;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color:  rgb(192, 42, 67) ;
+}
+
+/* dont */
+.dont{
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 17px;
+}
+.dont a {
+    color:  rgb(230, 86, 110);
+}
+.dont a:hover{
+    cursor: pointer;
+    color: rgb(192, 42, 67);
+}
+
+/* social */
+.social{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 60px;
+}
+.social h4{
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.social .social-images{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+    width: 145px;
+}
+.social-images i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+.social-images i:hover{
+    cursor: pointer;
+    background-color:rgb(192, 42, 67) ;
+}
+
+@media (max-width:606px){
+    .container{
+        overflow-x: hidden;
+    }
+    .form{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
