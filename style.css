@@ -1,159 +1,305 @@
+:root{
+    --white : rgb(231, 231, 231);
+    --darkwhite: rgb(128, 129, 136);
+    --pink: rgb(239, 109, 109);
+    --lightblue: rgb(35, 150, 199);
+}
 body{
     margin:0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: sans-serif;
+    background-image: url(rocket.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* section */
 .container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+    width: 320px;
+    height: max-content;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, .1);
 }
 
 /* img */
 .img{
-    width: 50%;
-    height: 100vh;
-}
-.img img{
-    width: 100%;
-    height: 100%;
+    display: none;
 }
 
-/* form */
-.form{
-    width: 50%;
+/* form container */
+.form-container{
+    width: 100%;
+    height: max-content;
+    z-index: 2;
+    position: relative;
+    background-color: rgb(28, 32, 53);
+    padding: 70px 50px;
+    box-sizing: border-box;
     overflow: hidden;
-    padding: 10%;
-    box-sizing: border-box;
 }
 
-/* heading */
-.form h1{
+/* current form indicator */
+.current-form-indicator{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    width: 120px;
+    background-color: var(--darkwhite);
+    color: var(--white);
     font-weight: bolder;
-    border-bottom: 5px solid rgb(230, 86, 110);
-    max-width: max-content;
-    color: rgba(0, 0, 0, 0.7);
-    margin-top: 0;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, .1);
+}
+.current-form-indicator p{
+    display: inline-flex;
+    padding: 7px 10px;
+    font-size: 10px;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+.current-form-indicator .sign-in-indicator{
+    border-radius: 20px 0 0 20px;
+    background-color: var(--pink);
+}
+.current-form-indicator .sign-up-indicator{
+    border-radius: 0 20px 20px 0;
 }
 
-/* username and password */
-input[type="text"], input[type="password"]{
-    height: 35px;
-    border-radius: 25px ;
-    width: 100%;
-    outline: none;
-    border: 1.8px solid rgba(0, 0, 0, 0.6);
-    margin-bottom: 15px;
-    font-weight: bolder;
-    font-size: 16px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-label[for="username"], label[for="password"]{
-    margin-bottom: 5px;
-    display: block;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: bold;
-}
-
-/* remember me */
-.remember{
-    margin-bottom: 8px;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: bold;
-    font-size: 15px;
-}
-
-/* sign in */
-input[type="submit"]{
-    height: 45px;
-    border-radius: 25px ;
-    width: 100%;
-    outline: none;
-    border: none;
-    /* border: 1.8px solid rgb(230, 86, 110); */
-    margin-bottom: 15px;
-    background-color:  rgb(230, 86, 110) ;
-    color: white;
-    font-weight: bolder;
-    font-size: 16px;
-    display: block;
-    box-sizing: border-box;
-}
-input[type="submit"]:hover{
-    cursor: pointer;
-    background-color:  rgb(192, 42, 67) ;
-}
-
-/* dont */
-.dont{
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: bold;
-    margin-top: 25px;
-    font-size: 17px;
-}
-.dont a {
-    color:  rgb(230, 86, 110);
-}
-.dont a:hover{
-    cursor: pointer;
-    color: rgb(192, 42, 67);
-}
-
-/* social */
-.social{
-    text-align: center;
-    color: rgba(0, 0, 0, 0.6);
-    margin-top: 60px;
-}
-.social h4{
-    margin-bottom: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
-.social .social-images{
-    display:flex;
+/* form navigation buttons */
+.buttons{
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px auto;
-    width: 145px;
+    width: 150px;
+    padding: 0;
+    margin: 0;
 }
-.social-images i{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+.buttons button{
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    padding: 2px;
+    font-size: 16px;
+    padding-left: 0;
+    transition: all .2s;
 }
-.social-images i:hover{
+.buttons .sign-in-button{
+    border-bottom: 2px solid var(--lightblue);
+}
+.buttons button:hover, .buttons button:focus{
     cursor: pointer;
-    background-color:rgb(192, 42, 67) ;
+    outline: none;
+    border-bottom: 2px solid var(--pink) !important;
+}
+.buttons p{
+    color: var(--darkwhite);
+    font-size: 14px;
 }
 
-@media (max-width:606px){
-    .container{
-        overflow-x: hidden;
-    }
-    .form{
+/* sign up and sign in form */
+.sign-in-sign-up-form{
+    display: flex;
+    width: 200%;
+    position: relative;
+    left: 0;
+}
+.sign-in, .sign-up{
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sign-in{
+    /* visibility: hidden; */
+}
+.sign-up{
+    visibility: hidden;
+}
+input[type="text"], input[type="password"], input[type="email"]{
+    border: none;
+    background-color: transparent;
+    border-bottom:1px solid var(--darkwhite) ;
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 3px;
+    box-sizing: border-box;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid var(--lightblue);
+}
+input{
+    margin: 10px 0;
+    color: var(--white);
+}
+label{
+    display: block;
+    margin-top: 15px;
+    color: var(--white);
+}
+label[for="check"] input, label[for="remember"] input{
+    margin-right: 5px;
+}
+label[for="check"], label[for="remember"]{
+    font-size: 14px;
+    color: var(--darkwhite);
+}
+label[for="check"]:hover, label[for="remember"]:hover, label[for="check"] input:hover, label[for="remember"] input:hover{
+    cursor: pointer;
+}
+label[for="check"] a, label[for="remember"] a{
+    color: var(--white);
+    text-decoration: none;
+}
+label[for="check"] a:hover, label[for="check"] a:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--lightblue);
+}
+/* submit button */
+input[type="submit"]{
+    color: var(--white);
+    border: 0;
+    border-radius: 20px;
+    font-weight: bolder;
+    padding: 7px 20px;
+    background-color: var(--pink);
+}
+input[type="submit"]:hover, input[type="submit"]:focus{
+    outline: none;
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: var(--lightblue);
+}
+input[type="submit"] ~ a{
+    text-decoration: none;
+    color: var(--darkwhite);
+    font-size: 12px;
+    margin-left: 5px;
+}
+input[type="submit"] ~ a:hover, input[type="submit"] ~ a:focus{
+    outline: none;
+    border-bottom: 1px solid var(--lightblue);
+}
+.dont{
+    font-size: 14px;
+    color: var(--darkwhite);
+}
+.dont a{
+    color: var(--white);
+    text-decoration: none;
+}
+.dont a:hover{
+    border-bottom: 1px solid var(--lightblue);
+}
+.dont a:focus{
+    outline: none;
+    border-bottom: 1px solid var(--lightblue);
+}
+.social{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.social h5{
+    color: var(--darkwhite);
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    font-size: 20px;
+}
+.social a{
+    color: white;
+}
+.social-icons a:hover{
+    color: var(--lightblue);
+    cursor: pointer;
+    outline: none;
+}
+.social-icons a:focus{
+    color: var(--lightblue);
+    cursor: pointer;
+    outline: none;
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        background: none;
+        display: block;
         width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.6);
+        min-height: 100vh;
+    }
+    .container{
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
     }
     .img{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        display: inline-flex;
+        width: 50%;
+        position: relative;
+        min-height: 100%;
+    }
+    .img img{
         width: 100%;
         height: 100%;
+        object-fit: cover;
+    }
+    .form-container{
+        width: 50%;
+        position: relative;
+        min-height: 100vh;
+        padding: 140px 50px;
+    }
+
+    /* current form indicator */
+    .current-form-indicator{
+        width: 160px;
+    }
+    .current-form-indicator p{
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    /* form navigation buttons */
+    .buttons{
+        width: 180px;
+        font-family: sans-serif;
+    }
+    .buttons button{
+        font-size: 18px;
+    }
+    .buttons p{
+        font-size: 16px;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"]{
+        padding-bottom: 5px;
+    }
+    input{
+        margin: 30px 0;
+        font-size: 18px;
+    }
+    label{
+        display: block;
+        margin-top: 25px;
     }
 }

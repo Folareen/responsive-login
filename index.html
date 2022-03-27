@@ -12,35 +12,66 @@
 <body>
     <div class="container">
         <div class="img">
-            <img src="building-background.jpeg" alt="">
+            <img src="rocket.jpg" alt="Background image">
         </div>
-        <div class="form">
-            <h1>LOGIN</h1>
-            <form action="">
-                <label for="username">Username</label>
-                <input type="text">
-                <label for="password">Password</label>
-                <input type="password" name="" id="">
-                <div class="remember">
-                    <input type="checkbox" name="remember" id="">
-                    <label for="remember">Remember me</label>
+        <div class="form-container">
+            <div class="current-form-indicator">
+                <p class="sign-in-indicator">Sign In</p>
+                <p class="sign-up-indicator">Sign Up</p>
+            </div>
+            <div class="buttons">
+                <button class="sign-in-button">
+                    Sign In
+                </button>
+                <p class="or">
+                    or
+                </p>
+                <button class="sign-up-button">Sign Up</button>
+            </div>
+            <div class="sign-in-sign-up-form">
+                <div class="sign-in">
+                    <form action="">
+                        <label for="username" >Email Address</Address></label>
+                        <input type="text" placeholder="Enter your email address">
+                        <label for="password">Password</label>
+                        <input type="password" name="" id="" placeholder="Enter your password">
+                        <label for="remember"><input type="checkbox" name="remember" id="remember">Remember Me</label>
+                        <input type="submit" value="Sign In">
+                    </form>
+                    <p class="dont">
+                        Don't have an account? <a href="#">Sign up</a>
+                    </p>
+                    <div class="social">
+                        <h5>
+                            Login with social media
+                        </h5>
+                        <div class="social-icons">
+                            <a href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" value="Sign in">
-            </form>
-            <p class="dont">
-                Don't have an account? <a href="#">Sign up</a>
-            </p>
-            <div class="social">
-                <h4>
-                    Login with social media
-                </h4>
-                <div class="social-images">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
+                <div class="sign-up">
+                    <label for="fullname">FULL NAME</label>
+                    <input type="text" name="fullname" id="fullname" placeholder="Enter your full name">
+                    <label for="email">E-MAIL</label>
+                    <input type="email" name="email" id="email" placeholder="Your e-mail goes here">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
+                    <label for="check"><input type="checkbox" name="check" id="check">I agree to all statements in <a href="#">terms of service</a></label>
+                    <input type="submit" value="Sign Up">
+                    <a href="#">I'm already a member</a>
                 </div>
             </div>
         </div>
     </div>
+    <script src="home.js"></script>
 </body>
 </html>
