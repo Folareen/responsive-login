@@ -39,7 +39,7 @@ body{
     z-index: 2;
     position: relative;
     background-color: rgb(28, 32, 53);
-    padding: 70px 50px;
+    padding: 80px 40px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -139,12 +139,12 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     border-bottom: 1.5px solid var(--lightblue);
 }
 input{
-    margin: 10px 0;
+    margin: 15px 0;
     color: var(--white);
 }
 label{
     display: block;
-    margin-top: 15px;
+    margin-top: 35px;
     color: var(--white);
 }
 label[for="check"] input, label[for="remember"] input{
