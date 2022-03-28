@@ -39,7 +39,7 @@ body{
     height: max-content;
     z-index: 2;
     position: relative;
-    background-color: rgb(28, 32, 53);
+    background-color: rgba(28, 32, 53, .99);
     padding: 80px 40px;
     box-sizing: border-box;
     overflow: hidden;
